@@ -1,0 +1,174 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: @ColorWhite;
+	height: 100%;
+
+  @media (max-width: 600px) {
+    overflow: hidden;
+  }
+}
+body {
+	font-family: "PT Mono", "Lucida Console", Monaco, monospace;
+	font-size: 18px;
+	font-weight: bold;
+  	color: @ColorDarkGrey;
+  	background-image: url(../img/bg.jpg);
+  	background-repeat: no-repeat;
+  	background-position: 0 0;
+  	background-size: contain;
+
+  	@media screen and (orientation:portrait) {
+		background-position: center center;
+  		background-size: cover;
+	}
+}
+
+.block {
+  .box-sizing(border-box);
+  padding: 0px 20px;
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: @BlockHeight;
+	position: absolute;
+	top: 40%;
+	margin-top: -1 * (@BlockHeight / 2);
+
+  @media (max-width: 600px) {
+    height: 100%;
+    margin-top: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 30px 20px;
+  }
+
+  #text {
+    line-height: 1.7em;
+  }
+  #social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @media (max-width: 600px) {
+      bottom: 30px;
+    }
+
+    .icon {
+      .border-radius(3px);
+      display: inline-block;
+      width: 40px;
+      height: 38px;
+      padding: 9px 0px;
+      box-sizing: border-box;
+      color: @ColorWhite;
+      background-color: @ColorGrey; 
+
+      @media (max-width: 600px) {
+        width: 60px;
+        height: 58px;
+        font-size: 1.2em;
+        padding: 18px 0px;
+
+        &#email {
+          background-color: @ColorBlue4;
+        }
+        &#github {
+          background-color: @ColorBlue3;
+        }
+        &#linkedin {
+          background-color: @ColorBlue2;
+        }
+        &#facebook {
+          background-color: @ColorBlue1;
+        }
+
+      }
+      @media (min-width: 600px) {
+        .transition (background-color 1s ease);
+
+        &:hover, &:active {
+          &#email {
+            background-color: @ColorBlue4;
+          }
+          &#github {
+            background-color: @ColorBlue3;
+          }
+          &#linkedin {
+            background-color: @ColorBlue2;
+          }
+          &#facebook {
+            background-color: @ColorBlue1;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.question {
+  .box-sizing(border-box);
+  padding: 20px;
+  display: block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: @ColorGrey;
+  cursor: pointer;
+
+  .transition (opacity 1s ease);
+  .opacity(0.5);
+
+  &:hover {
+    .opacity(1);
+  }
+
+  @media (max-width: 600px) {
+    display: none !important;
+  }
+}
+
+
+.simpTooltip {
+  position:absolute;
+  background: @ColorDarkGrey;
+  padding:7px 10px;
+  color:@ColorWhite;
+  font-size: 12px;
+  display:none;
+  z-index: 11;
+  .border-radius(3px);
+
+  @media (max-width: 600px) {
+    display: none !important;
+  }
+}
+
+#typed-cursor{
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    -ms-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

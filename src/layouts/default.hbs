@@ -1,0 +1,51 @@
+<!-- src/layouts/default.hbs -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Cutive+Mono|PT+Mono|VT323' rel='stylesheet' type='text/css'>
+
+        <!-- Main Style -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- icon -->
+        <link rel="icon" type="image/png" href="img/icon.png" />
+
+        <!-- disabling zoom -->
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+        <title>{{site.title}}</title>
+    </head>
+    <body>
+
+        <div class="block">
+            <span id="text"></span>
+
+            <div id="social">
+                {{#each site.social}}
+                    <a id="{{this.id}}" data-tooltip="{{this.name}}" href="{{this.link}}" target="blank" class="icon"><i class="fa fa-{{this.icon}}"></i></a>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="question"><i class="fa fa-question-circle"></i></div>
+
+		<!-- jQuery -->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- Typed -->
+		<script src="libs/typed/typed.js"></script>
+        <!-- simpTooltip -->
+        <script src="libs/simpTooltip/simpTooltip.js"></script>
+        <!-- simpModal -->
+        <script src="libs/simpModal/simpModal.min.js"></script>
+        <!-- Main Script -->
+        <script src="js/scripts.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,4 @@
+node_modules/
+web/
+mock_files/
+.DS_Store

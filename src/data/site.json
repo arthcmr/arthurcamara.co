@@ -1,0 +1,31 @@
+{
+	"title": "Arthur Câmara",
+	"address": "arthurcamara.com",
+	"year": "2014",
+	"social": [
+		{
+			"name": "Email",
+			"id": "email",
+			"icon": "envelope",
+			"link": "mailto:arthurcamara@gmail.com"
+		},
+		{
+			"name": "GitHub",
+			"id": "github",
+			"icon": "github",
+			"link": "https://github.com/arthurcamara1"
+		},
+		{
+			"name": "LinkedIn",
+			"id": "linkedin",
+			"icon": "linkedin",
+			"link": "https://www.linkedin.com/pub/arthur-c%C3%A2mara/14/3b1/2b9"
+		},
+		{
+			"name": "Facebook",
+			"id": "facebook",
+			"icon": "facebook",
+			"link": "https://www.facebook.com/arthurcamara1"
+		}
+	]
+}
