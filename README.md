@@ -3,9 +3,9 @@ arthurcamara.com
 
 **Source files of my personal website: www.arthurcamara.com**
 
-It's a statically generated website. It's actually just a landing page I built in less than an hour using other open-source tools. See it in action at [www.arthurcamara.com].
+This is a statically generated website. It's actually just a landing page I built in less than an hour using other open-source tools. See it in action at [my website](www.arthurcamara.com).
 
-Feel free to do anything with the code :)
+Feel free to do anything you want with the code :)
 
 ##Get Started
 
