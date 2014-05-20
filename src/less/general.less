@@ -132,6 +132,34 @@ body {
   }
 }
 
+#info {
+  display: none;
+}
+
+.info {
+
+    max-width: 400px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-family: Arial, sans-serif;
+    padding: 30px 40px;
+
+    .border-radius(3px);
+    .drop-shadow(0,0, 8px, 0, 0.2);
+    
+    h1 {
+      color: @ColorBlue2;
+    }
+
+    a, a:active {
+      color: @ColorBlue2;
+      text-decoration: underline;
+      &:hover {
+        color: @ColorBlue1;
+      }
+    }
+}
 
 .simpTooltip {
   position:absolute;
@@ -142,6 +170,7 @@ body {
   display:none;
   z-index: 11;
   .border-radius(3px);
+  font-weight: 300;
 
   @media (max-width: 600px) {
     display: none !important;
