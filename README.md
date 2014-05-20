@@ -31,7 +31,7 @@ When you run this command, grunt keeps watching for changes, and rebuilds your e
 
 Great job! **Open ```web/index.html``` in your browser and you'll be able to see the page running.**
 
-##Related projects
+##Quickly built with these:
 
 The page was quickly built in less than an hour using the following projects:
 * [jQuery](http://jquery.com/)
