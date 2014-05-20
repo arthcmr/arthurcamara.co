@@ -1,0 +1,69 @@
+/*DEFAULT SIMPMODAL STYLES*/
+
+.simp_modal_wrapper {
+	.mobile-scroll();
+}
+
+.simp_overlay {
+    background: #000;
+    display: none;
+}
+.simp_modal {
+    width: 600px;
+    padding: 30px;
+    display: none;
+    background: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4);
+    text-align: justify;
+    margin-bottom: 50px;
+
+    .mobile-scroll();
+
+
+    &.wide {
+        width: 800px;
+    }
+
+    @media (max-width: 767px) {
+		width: 100% !important;
+        max-width: 100% !important;
+		margin-left: 0px !important;
+		left: 0px !important;
+		top: 0px !important;
+		margin-bottom: 0px !important;
+		border-radius: 0px;
+	    -moz-border-radius: 0px;
+	    -webkit-border-radius: 0px;
+    }
+}
+.simp_modal .close_button {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    font-family: sans-serif;
+}
+.simp_modal .close_button:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}

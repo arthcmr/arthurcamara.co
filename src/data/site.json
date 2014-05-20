@@ -4,7 +4,7 @@
 	"year": "2014",
 	"social": [
 		{
-			"name": "Email",
+			"name": "arthurcamara@gmail.com",
 			"id": "email",
 			"icon": "envelope",
 			"link": "mailto:arthurcamara@gmail.com"
@@ -26,6 +26,32 @@
 			"id": "facebook",
 			"icon": "facebook",
 			"link": "https://www.facebook.com/arthurcamara1"
+		}
+	],
+	"refs": [
+		{
+			"name": "jQuery",
+			"link": "http://jquery.com/"
+		},
+		{
+			"name": "simpGrunt",
+			"link": "https://github.com/arthurcamara1/simpGrunt"
+		},
+		{
+			"name": "Typed.js",
+			"link": "https://github.com/mattboldt/typed.js"
+		},
+		{
+			"name": "simpModal",
+			"link": "https://github.com/arthurcamara1/simpModal"
+		},
+		{
+			"name": "simpTooltip",
+			"link": "https://github.com/arthurcamara1/simpTooltip"
+		},
+		{
+			"name": "Font Awesome",
+			"link": "http://fontawesome.io/"
 		}
 	]
 }

@@ -33,7 +33,18 @@
             </div>
         </div>
 
-        <div class="question"><i class="fa fa-question-circle"></i></div>
+        <div id="question" class="question"><i class="fa fa-question-circle"></i></div>
+
+        <div id="info">
+            <h1 align="center"><i class="fa fa-child fa-2x"></i></h1>
+            <p>This landing page was developed in less than 1 hour using primarily the following open-source projects:</p>
+            <ul>
+                {{#each site.refs}}
+                    <li><a href="{{this.link}}" target="blank">{{this.name}}</a></li>
+                {{/each}}
+            </ul>
+            <p>The code is also publicly available at <a href="https://github.com/arthurcamara1/arthurcamara.com/" target="blank">this github repo</a>. Feel free to do absolutely whatever you want with it <i class="fa fa-smile-o"></i>. </p>
+        </div>
 
 		<!-- jQuery -->
 		<script src="libs/jquery/jquery.min.js"></script>

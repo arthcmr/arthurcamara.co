@@ -5,14 +5,13 @@ $(function() {
 					 "I write ^1000 code.",
 				     "I live in Stockholm, Sweden."];
 
-	var random_sentences = ["I listen to good music.",
-							"Traveling is my passion.",
+	var random_sentences = ["Traveling is my passion.",
 							"I google. ^1500 Quite often.",
 							"I can spend hours reading Wikipedia.",
 							"I believe the world is getting better.",
-							"I love being a web developer.",
+							"Web development gives me a job and is, still, my main hobby.",
 							"I try to learn something new everyday.",
-							"I still get amazed with the simplest things.",
+							"I am amazed by the simplest things.",
 							"Genetic Programming = Awesomeness.",
 							"I'm passionate about Responsive Design.",
 							"JavaScript is my favorite language atm.",
@@ -20,12 +19,13 @@ $(function() {
 							"favs = ['JavaScript', 'CSS', 'PHP', 'Python', 'Ruby', 'SQL', 'MongoDB'];",
 							"My best advice: transparency.",
 							"Skydiving is on my bucket list.",
-							"I'm 24.",
+							"I'm 24. And counting.",
 							"Mobile-first web development is fun!",
-							"I read HackerNews and Codrops.",
-							"Mom, I love you.",
-							"I have a BS Computer Science  ",
-							"Open source projects bring happiness.",
+							"I like to have an opinion on important matters.",
+							"Say hi, tell your story, teach me something or surprise me.",
+							"I read HackerNews, Codrops, Smashing Magazine and Gizmodo.^1000 (among many other things)",
+							"I have a B.S. in Computer Science.",
+							"Open source projects produce more smiles.",
 							"I push to GitHub.",
 							"When I was 12, I wrote my first program."];
 
@@ -46,6 +46,10 @@ $(function() {
 		$.simpTooltip();
     }
 
+    $("#question").click(function() {
+    	openInfoModal();
+    });
+
 
 });
 
@@ -54,3 +58,11 @@ function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
+
+function openInfoModal() {
+	$.simpModal({
+		element: $("#info"),
+		extraClass: "info",
+		top: 100
+	});
+}
