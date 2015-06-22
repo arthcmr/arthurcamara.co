@@ -1,9 +1,9 @@
-arthurcamara.com
+arthcamara.com
 =========
 
-**Source files of my personal website: www.arthurcamara.com**
+**Source files of my personal website: www.arthcamara.com**
 
-This is a statically generated website. It's actually just a landing page I built in less than an hour using other open-source tools. See it in action at [my website](www.arthurcamara.com).
+This is a statically generated website. It's actually just a landing page I built in less than an hour using other open-source tools. See it in action at [my website](www.arthcamara.com).
 
 Feel free to do anything you want with the code :)
 
@@ -14,9 +14,9 @@ How to build the site locally:
 1. First of all, you need to have Node and NPM (Node Package Manager, which comes with Node) installed. Just go to http://nodejs.org/ and install it. *You might already have it!*
 2. If you haven't done this already, download or clone this repo
 ```
-git clone https://github.com/arthurcamara1/arthurcamara.com.git
+git clone https://github.com/arthurcamara1/arthcamara.com.git
 ```
-3. Browse to the folder ```cd arthurcamara.com``` and run the following command to install the dependencies.
+3. Browse to the folder ```cd arthcamara.com``` and run the following command to install the dependencies.
 ```
 npm install
 ```
