@@ -1,0 +1,173 @@
+$container-width: 700px;
+$container-height: 360px;
+$animation-mult: 0.6s;
+$initial_delay: 1s;
+
+.main-container {
+	width: $container-width;
+	@include position(absolute, 50% null null 50%);
+	margin: (-1 * $container-height /2) auto auto (-1 * $container-width /2);
+}
+
+.main-photo {
+	@include position(absolute);
+
+	//animation
+	opacity: 0;
+	@include fadeInRight($animation-mult, $initial_delay);
+}
+
+.main-message {
+
+	display: block;
+	margin-left: 305px;
+	line-height: 1.5;
+
+    p {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 38px;
+        font-weight: normal;
+        margin: 0;
+    }
+    h1 > a {
+        color: $color-green;
+		text-decoration: none;
+
+		&:hover {
+			color: $color-green;
+			text-decoration: none;
+			border-bottom: 4px dotted $color-green;
+		}
+    }
+    .crossed {
+    	text-decoration: line-through;
+    }
+
+    .social-icon {
+        @include prefixer(background-clip, padding-box, webkit moz spec);
+        @include box-sizing(border-box);
+        @include border-radius(3px);
+
+		@include transition-property(background-color);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease);
+
+        background-color: #c4c4c4;
+        text-align: center;
+        display: inline-block;
+        width: 40px;
+        height: 38px;
+        padding: 9px 0px;
+        color: white;
+        margin: 2px;
+
+		@include breakpoint(large) {
+			&:hover, &:active{
+				background-color: $color-green;
+    		}
+
+	    	@for $i from 0 through 9{
+			  &:nth-child(#{$i}):hover, &:nth-child(#{$i}):active, &:nth-child(#{$i}):focus {
+			  	opacity: 1; 
+			  	background-color: adjust-hue( $color-green, $i * 7%);
+			  }
+			}
+		}
+
+
+    	img {
+    		width: 20px;
+    		fill: white;
+    	}
+    }
+
+	//ANIMATION
+    h1 {
+		opacity: 0;
+		@include fadeInLeft($animation-mult, $initial_delay + ($animation-mult - $animation-mult/2));
+	}
+	h2 {
+		opacity: 0;
+		@include fadeInLeft($animation-mult, $initial_delay + $animation-mult);
+	}
+	p {
+		opacity: 0;
+		@include fadeInLeft($animation-mult, $initial_delay + ($animation-mult + $animation-mult/2));
+	}
+	.social-icon {
+		@for $i from 0 through 9{
+		  &:nth-child(#{$i}) { 
+		  	opacity: 0;
+			@include fadeInRight($animation-mult, $initial_delay + ($animation-mult + $animation-mult/2) + ($i/4)*1s );
+		  }
+		} 
+	}
+}
+
+@include breakpoint(medium-portrait) {
+
+	$container-width: 500px;
+	$container-height: 700px;
+
+    .main-container {
+        width: $container-width;
+        height: $container-height;
+		margin: (-1 * $container-height /2) auto auto (-1 * $container-width /2);
+		text-align: center;
+    }
+    .main-photo {
+    	position: static;
+    	@include fadeInUp($animation-mult, $initial_delay);
+    }
+    .main-message {
+    	margin: 0;
+    	margin-top: 30px;
+
+    	h1 {
+			@include fadeInUp($animation-mult, $initial_delay + ($animation-mult - $animation-mult/2));
+		}
+		h2 {
+			@include fadeInUp($animation-mult, $initial_delay + $animation-mult);
+		}
+		p {
+			@include fadeInUp($animation-mult, $initial_delay + ($animation-mult + $animation-mult/2));
+		}
+    }
+}
+
+@include breakpoint(small-portrait) {
+
+    .main-container {
+    	position: static;
+        width: auto;
+        height: auto;
+		margin: 30px 20px;
+		text-align: center;
+    }
+    .main-photo {
+    	position: static;
+    	@include fadeInUp($animation-mult, $initial_delay);
+
+    	img {
+			max-width: 50%;
+    	}
+    }
+    .main-message {
+    	margin: 0;
+    	margin-top: 15px;
+
+    	h1 {
+			@include fadeInUp($animation-mult, $initial_delay + ($animation-mult - $animation-mult/2));
+		}
+		h2 {
+			font-size: 25px;
+			@include fadeInUp($animation-mult, $initial_delay + $animation-mult);
+		}
+		p {
+			font-size: 18px;
+			@include fadeInUp($animation-mult, $initial_delay + ($animation-mult + $animation-mult/2));
+		}
+    }
+}

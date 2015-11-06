@@ -1,0 +1,64 @@
+//adapted from https://github.com/arashmanteghi/simptip/
+
+$tooltipHeight: 22px;
+$arrowSize: 5px;
+$tooltipColor: #323232;
+$tooltipTextColor: #ecf0f1;
+
+@include breakpoint(large) {
+    [data-tooltip] {
+        @include box-sizing(content-box);
+        position: relative;
+        display: inline-block;
+        &:before, &:after {
+            @include transform(translateX(-50%));
+            @include box-sizing(content-box);
+            @include position(absolute, 100% null null 50%);
+            @include fade();
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            bottom: 100%;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 999999;
+            // Force Hardware Acceleration in WebKit with translate3d
+            // Refrence: http://davidwalsh.name/translate3d
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        // tooltip arrow   
+        &:before {
+            content: '';
+            border-color: $tooltipColor;
+            border-style: none;
+            border: $arrowSize solid transparent;
+            border-bottom: $arrowSize+1px solid $tooltipColor;
+            margin-top: $arrowSize * -1 + 1;
+        }
+        // tooltip box
+        &:after {
+            content: attr(data-tooltip);
+            @include border-radius(3px);
+            width: auto;
+            height: $tooltipHeight;
+            padding: $tooltipHeight/2 $tooltipHeight/2 0 $tooltipHeight/2;
+            font-size: 13px;
+            line-height: $tooltipHeight/2;
+            white-space: nowrap;
+            background-color: $tooltipColor;
+            color: $tooltipTextColor;
+            margin-top: 7px;
+        }
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            &:before, &:after {
+                @include transform(translate(-50%, 0));
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+# Syntax highlighting
+highlighter:         pygments
+
+# Permalinks
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Arthur Camara
+author:              Arthur Camara
+tagline:             Web developer
+url:                 /
+baseurl:             /
+excerpt_separator:   <!--more-->
+
+#Blog
+paginate: 5
+paginate_path: "/blog/:num/"
+
+#social
+social:
+- id: email
+  tooltip: arthurcamara@gmail.com
+  link: mailto:arthurcamara@gmail.com
+  icon: icons/envelope.svg
+- id: github
+  tooltip: GitHub
+  link: https://github.com/arthurcamara1
+  icon: icons/github.svg
+- id: codepen
+  tooltip: Codepen
+  link: http://codepen.io/arthurcamara1/
+  icon: icons/codepen.svg
+- id: linkedin
+  tooltip: LinkedIn
+  link: https://se.linkedin.com/in/arthurcamara1
+  icon: icons/linkedin.svg
+- id: twitter
+  tooltip: Twitter
+  link: https://twitter.com/arthur_camara
+  icon: icons/twitter.svg
+- id: facebook
+  tooltip: Facebook
+  link: https://www.facebook.com/arthurcamara1
+  icon: icons/facebook.svg
+
+# Assets
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+
+exclude: [Gemfile, Gemfile.lock, LICENSE, README.md]

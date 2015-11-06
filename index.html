@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+---
+
+<div class="main-container">
+  <div class="main-photo">
+    {% image photo.png alt="Profile image" %}
+  </div>
+  
+  <div class="main-message">
+    <h1>Hi, <a href="blog/">I'm Arthur</a>.</h1>
+    <h2>I build high quality web applications with focus on user experience.</h2>
+    <!-- <p>See my <a href="https://github.com/arthurcamara1" target="blank">code</a>, <a href="blog/">blog</a> and <a href="#">travels</a>.</p> -->
+
+    <p>See my <a href="https://github.com/arthurcamara1" target="blank">code</a> and <a href="blog/">blog</a>.</p>
+
+    <div class="social">
+
+      {% for s in site.social %}
+      <a id="{{ s.id }}" data-tooltip="{{ s.tooltip }}" href="{{ s.link }}" target="blank" class="social-icon">
+        {{ s.icon | image }}
+      </a>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

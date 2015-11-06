@@ -1,0 +1,47 @@
+---
+layout: default
+comments: true
+---
+
+
+<div class="blog-container blog-post">
+
+  <header class="blog-header">
+    <div class="blog-photo">
+      <a href="{{ site.url }}blog/">
+      {% image photo.png alt="Profile image" %}
+      </a>
+    </div>
+  </header>
+
+  <div class="posts-container">
+    <article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-date"><span class='author-photo'>{% image photo.png alt="Profile image" %}</span> <a href="{{ site.url }}">{{ site.author }}</a> &middot; {{ page.date | date_to_string }}</p>
+
+      {{ content }}
+    </article>
+  </div>
+
+  {% if page.comments %}
+  <div class="posts-comments">
+    <div id="disqus_thread"></div>
+  </div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES * * */
+      var disqus_shortname = 'arthurcamaras';
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  {% endif %}
+
+  <footer>
+    arthurcamara.me
+  </footer>
+
+</div>

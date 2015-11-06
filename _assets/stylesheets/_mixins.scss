@@ -1,0 +1,52 @@
+@mixin fade ($duration: 0.2s, $delay: 0s) {
+    @include transition-property(opacity);
+    @include transition-duration($duration);
+    @include transition-delay($delay);
+    @include transition-timing-function(linear);
+}
+
+@mixin border-radius($radius: 4px) {
+    @include prefixer(border-radius, $radius, webkit moz spec);
+}
+
+@mixin box-sizing($box-model) {
+    @include prefixer(box-sizing, $box-model, webkit moz spec);
+}
+
+@mixin transform($string) {
+    @include prefixer(transform, $string, webkit moz spec);
+}
+
+$break-small: 400px;
+$break-large: 1030px;
+
+@mixin breakpoint($media) {
+  @if $media == small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium{
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else if $media == not-large {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == not-small {
+    @media only screen and (min-width: $break-small + 1) { @content; }
+  }
+  @else if $media == small-landscape {
+    @media only screen and (max-width: $break-small) and (orientation: landscape) { @content; }
+  }
+  @else if $media == small-portrait {
+    @media only screen and (max-width: $break-small) and (orientation: portrait) { @content; }
+  }
+  @else if $media == medium-landscape {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation: landscape) { @content; }
+  }
+  @else if $media == medium-portrait {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) and (orientation: portrait) { @content; }
+  }
+
+}

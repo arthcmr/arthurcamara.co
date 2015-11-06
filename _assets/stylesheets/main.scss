@@ -1,0 +1,34 @@
+@import "bourbon/bourbon";
+@import "saffron/saffron";
+@import "normalize";
+@import "mixins";
+
+$color-green: #00B285;
+$color-black: #444425;
+$color-blue: #5978A3;
+
+body {
+	font-family: 'Lato', Helvetica, sans-serif;
+	color: $color-black;
+}
+
+h1 {
+	font-size: 38px;
+	font-weight: 900;
+    margin: 0;
+}
+
+a, a:hover, a:active {
+	color: $color-blue;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@import "home";
+@import "tooltip";
+
+@import "blog";
+@import "about";
+@import "highlight";

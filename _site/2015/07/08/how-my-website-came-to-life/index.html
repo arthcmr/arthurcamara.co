@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How this website was quickly developed &middot; Arthur Camara
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main-bcdf1df2585b26fe9baf91f5dda83ac9.css">
+
+  <!-- Google Font -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Arthur Camara" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="blog-container blog-post">
+
+  <header class="blog-header">
+    <div class="blog-photo">
+      <a href="/blog/">
+      <img src="/assets/photo-b764d4990c3ca0bea23f6c401eceb788.png" alt="Profile image">
+      </a>
+    </div>
+  </header>
+
+  <div class="posts-container">
+    <article class="post">
+    <h1 class="post-title">How this website was quickly developed</h1>
+      <p class="post-date"><span class='author-photo'><img src="/assets/photo-b764d4990c3ca0bea23f6c401eceb788.png" alt="Profile image"></span> <a href="/">Arthur Camara</a> &middot; 08 Jul 2015</p>
+
+      <p>This is my very first post on my new blog. I’ve been planning on having a technical blog for a while, and now I finally have a place where I can write and publish articles, and share interesting discoveries with whomever stumbles upon <a href="http://arthurcamara.me">my page</a> .</p>
+
+<p>When I decided to replace my <a href="http://arthurcamara.me/previous/">previous page</a> with this new version, I knew that I wanted to <em>accomplish a few things</em>:</p>
+
+<ol>
+  <li>The page should be super simple, with minimalistic design.</li>
+  <li>I should develop it in a few hours: ideally, two.
+<!--more--></li>
+  <li>I wanted to share contacts and basic info,</li>
+  <li>I wanted to have a blog.</li>
+  <li>It should be simple to update content and functionalities.</li>
+  <li>It should work well on all devices.</li>
+  <li>It should be open source.</li>
+</ol>
+
+<p>With all that in mind, I thought of various approaches and decided to go with the static site generator <strong><a href="http://jekyllrb.com/">Jekyll</a></strong>.</p>
+
+<hr />
+
+<h3 id="getting-started">Getting started</h3>
+
+<p>You can start your site by simply running the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gem install jekyll
+jekyll new mysite
+<span class="nb">cd </span>mysite
+jekyll serve</code></pre></div>
+
+<p>The site will be up and running on <code>127.0.0.1:4000</code>. You can simply modify settings and CSS to get a decent site in shape.</p>
+
+<h3 id="modifying-jekylls-default-project">Modifying Jekyll’s default project</h3>
+
+<p>Though I had an out-of-the-box version running, I quickly realized I wanted to spice up my tools a bit in order to code quickly and structure my project better.</p>
+
+<p>For assets management (images, javascript and stylesheets) and pipeline, I installed <strong><a href="https://github.com/jekyll-assets/jekyll-assets">Jekyll Assets</a></strong>. Jekyll Assets takes care of assets digesting, caching, filepaths and makes it all a lot simpler.</p>
+
+<p>It will place an image, for instance, in the correct dist path, write the markup and even take care of caching (the image in the <code>_site</code> folder will be renamed to a safe filename such as <code>image-b764d4990c3ca0bea23f6c401eceb788.png</code>).</p>
+
+<p>All I had to do was to install the Ruby Gem <code>jekyll-assets</code> and add the following to <code>_plugins/ext.rb</code>:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">&quot;jekyll-assets&quot;</span></code></pre></div>
+
+<p>I also wanted to code styles using <a href="http://sass-lang.com/">Sass/SCSS</a>. Jekyll Assets makes it easy to include the preprocessor in the build pipeline. I installed <code>sass</code> and included the correct configuration to my <a href="https://github.com/arthurcamara1/arthurcamara.me/blob/master/_config.xml"><code>_config.xml</code></a>.</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">assets</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">css_compressor</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sass</span></code></pre></div>
+
+<h4 id="additional-libraries">Additional libraries</h4>
+
+<p><a href="http://bourbon.io">Bourbon</a> can be  extremely useful when it comes to Sass. It is a lightweight library that includes useful Sass mixins like <code>prefixer()</code> and <code>transition()</code>. We can rely on Bourbon to provide good implementation of commonly used patterns, cross-browser compatible styles, vendor prefixes and much more. It also makes writing code a lot faster. Plus, an inherent advantage of using a Sass library, instead of a vanilla CSS one (like the default Bootstrap stylesheet), is that only features we actually use will end up in the post-processed CSS file, optimizing its size.</p>
+
+<p>Another useful library I used was <a href="https://github.com/colindresj/saffron">Saffron</a>: a collection of mixins that help creating simple CSS3 animations. Though it is not so well documented, it is well structure, which makes it simple to <a href="https://github.com/colindresj/saffron/tree/master/app/assets/stylesheets/entrances">navigate through the source</a> and use their mixins.</p>
+
+<h4 id="instalation-should-be-reproducible">Instalation should be reproducible</h4>
+
+<p>In order to easily reproduce those steps, I included those plugins and libraries in a <a href="https://github.com/arthurcamara1/arthurcamara.me/blob/master/Gemfile"><code>Gemfile</code></a>. Installing became as simple as running:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle install</code></pre></div>
+
+<h3 id="with-the-basic-environment-setup-ready-its-time-to-develop">With the basic environment setup ready, it’s time to develop</h3>
+
+<p>After having the basic setup, things went pretty smooth and straightforward. I was able to quickly develop and deploy my site.</p>
+
+<p>I already had mocks for both mobile and desktop versions, so I simply worked on coding the markup and stylesheets.</p>
+
+<p class="image-paragraph">
+<img src="/assets/blog/2015-07-08-website-c84c1bd53cb0e9c8424341341759e101.png" alt="Desktop version" />
+</p>
+
+<p class="image-paragraph">
+<img src="/assets/blog/2015-07-08-website-phone-2501bd4b589f24e729d4a79ff484c9f7.jpg" alt="Mobile version" />
+</p>
+
+<p>In fact, most of the time was spent fine tuning the animation and styles, and making sure the website remained responsive. I probably spent an equal amount of time (or longer) writing this blog post.</p>
+
+<p>Finally, I decided to add Disqus comments to the blog, and try some basic cross-browser testing with <a href="https://www.browserstack.com">Browserstack</a>, just to make sure it renders fine in most browsers.</p>
+
+<h3 id="feel-free-to-grab-the-code">Feel free to grab the code</h3>
+
+<p>If you’d like to clone the project, visit <a href="https://github.com/arthurcamara1/arthurcamara.me">the repo on GitHub</a> and follow the instructions.</p>
+
+<hr />
+
+<h3 id="future-work">Future work</h3>
+
+<p>With a basic page in place, I can keep working on the blog and adding new features gradually. Things I plan to add soon:</p>
+
+<ul>
+  <li>About page, with a bit of my background, experience and education</li>
+  <li>Travel page, with pictures of places I’ve been to</li>
+  <li>Maybe a special place to feature side projects</li>
+</ul>
+
+<p>Thanks for visiting the blog, and feel free to leave comments or suggestions below.</p>
+
+    </article>
+  </div>
+
+  
+  <div class="posts-comments">
+    <div id="disqus_thread"></div>
+  </div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES * * */
+      var disqus_shortname = 'arthurcamaras';
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  
+
+  <footer>
+    arthurcamara.me
+  </footer>
+
+</div>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67549468-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+</html>

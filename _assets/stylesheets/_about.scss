@@ -1,0 +1,11 @@
+.about-container {
+	@extend .blog-container;
+}
+
+.about-header {
+	@extend .blog-header;
+}
+
+.about-photo {
+	@extend .blog-photo;
+}
