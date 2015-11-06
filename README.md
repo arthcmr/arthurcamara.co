@@ -1,9 +1,9 @@
 arthurcamara.me
 =========
 
-**Source files of my personal website: www.arthcamara.me**
+**Source files of my personal website: www.arthurcamara.me**
 
-This is a statically generated website. It's actually just a landing page I built in less than an hour using Jekyll. See it in action at [my website](www.arthurcamara.me).
+This is a statically generated website. It's actually just a landing page I built in less than two hours using Jekyll. See it in action at [my website](http://www.arthurcamara.me).
 
 Feel free to do anything you want with the code :)
 
